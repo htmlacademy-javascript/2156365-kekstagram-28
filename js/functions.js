@@ -73,7 +73,7 @@ const extractNumber = (string) => {
     }
   }
   return parseInt(result,10);
-}
+};
 
 /*Если хотите усложнить задание, предусмотрите случай, когда вместо строки приходит число:
 
@@ -126,4 +126,4 @@ const myPadStart = (string, minLenght,pad) => {
     ? string
     : pad.slice(0,actualPad % pad.length) + pad.repeat(actualPad /
   pad.length) + string;
-}
+};
