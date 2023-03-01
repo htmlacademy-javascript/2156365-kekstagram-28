@@ -8,6 +8,9 @@
  Строка длиннее 10 символов
 имяФункции('проверяемая строка', 10); // false
 */
+
+/*eslint-disable no-unused-vars*/
+
 const isCheckString = (string ,length) => {
   if (string.length <= length) {
     return true;
