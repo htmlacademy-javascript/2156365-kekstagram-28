@@ -48,7 +48,7 @@ const createMessage = () =>
   ).join(' ');
 
 const createComment = () => ({
-  id: generateCommentId (),
+  id: generatorCommentId (),
   avatar: 'img/avatar-$ {getRandomInteger(1,AVATAR_COUNT)}.svg',
   message: createMessage(),
   name:getRandomArrayElement(NAMES),
@@ -60,7 +60,7 @@ const createPicture = (index) => ({
   description: getRandomArrayElement(DESCRIPTIONS),
   Likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),
   comments: Array.from (
-    { length: getRandomInteger(0, COMMENT_COUNT)},
+    { length: getRandomInteger(0, COMMENT_LINES)},
     createComment
   ),
 });
@@ -70,4 +70,4 @@ const getPicture = () =>
     createPicture(pictureIndex + 1)
   );
 
-getPictures();
+getPicture ();
