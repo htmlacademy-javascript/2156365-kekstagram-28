@@ -70,4 +70,5 @@ const getPicture = () =>
     createPicture(pictureIndex + 1)
   );
 
+
 getPicture ();
