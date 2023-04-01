@@ -7,22 +7,22 @@ const thumbnailTemplete = document
 const container = document.querySelector('.pictures');
 
 //клонируем для каждого объекта через функцию
-const createThumbnail = ({ comments ,description, likes, url })=> {
+const createThumbnail = ({ comments ,description, likes, url, id })=> {
   const thumbnail = thumbnailTemplete.cloneNode(true);
 
   thumbnail.querySelector('.picture__img').src = url;
   thumbnail.querySelector('.picture__img').alt = description;
   thumbnail.querySelector('.picture__comments').textContent = comments.length;
   thumbnail.querySelector('.picture__likes').textContent = likes;
-
+  thumbnail.dataset.thumbnailId = id;
   return thumbnail;
 };
 
-const renderThumbnails = (pictures) => {
+const renderThumbnails = (thumbnails) => {
   const fragment = document.createDocumentFragment();
-  pictures.forEach((picture) => {
-    const thumbnail = createThumbnail(picture);
-    fragment.append(thumbnail);
+  thumbnails.forEach((thumbnail) => {
+    const pictureElement = createThumbnail(thumbnail);
+    fragment.append(pictureElement);
   });
   container.append(fragment);
 };
