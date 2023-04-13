@@ -1,3 +1,7 @@
+
+import {resetScale} from'./scale.js';
+import {resetEffects} from'./effect.js';
+
 const TAG_ERROR_TEXT = 'Неправильно заполнены хэштеги';
 const HASHTAG_MAX_COUNT = 50;
 const VALID_SYMBOL = /^#[a-za-яё0-9]{1,19}$/i;
@@ -25,6 +29,8 @@ const showModal = () => {
 const hideModal = () => {
   form.reset();
   pristine.reset();
+  resetScale();
+  resetEffects();
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
   document.removeEventListener('keydown', onModalKeydown);
