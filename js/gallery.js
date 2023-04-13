@@ -1,5 +1,5 @@
 import { renderThumbnails } from './thumbnails.js';
-import { showBigPicture } from './big-picture.js';
+import { showBigPicture } from './bigPicture.js';
 
 const container = document.querySelector('.pictures');
 
@@ -9,6 +9,8 @@ const renderGallery = (pictures) => {
     if(!thumbnail){
       return;
     }
+
+    evt.preventDefault();
     const picture = pictures.find(
       (item) => item.id === +thumbnail.dataset.thumbnailId
     );
