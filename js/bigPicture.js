@@ -64,7 +64,7 @@ const onCancelButtonClick = () => {
 
 const onCommentsLoaderClick = () => renderComments ();
 
-const renderPictureDetails = ({ url, likes, description }) => {
+const renderPictureDetails = ({url, likes, description}) => {
   bigPicture.querySelector('.big-picture__img img').src = url;
   bigPicture.querySelector('.big-picture__img img').alt = description;
   bigPicture.querySelector('.likes-count').textContent = likes;
@@ -75,7 +75,6 @@ const showBigPicture = (data) => {
   bigPicture.classList.remove('hidden');
   body.classList.add('modal-open');
   commentsLoader.classList.add('hidden');
-  commentCount.classList.add('hidden');
   document.addEventListener('keydown', onDocumentKeydown);
 
   renderPictureDetails(data);
@@ -85,6 +84,7 @@ const showBigPicture = (data) => {
   }
 };
 
-cancelButton.addEventListener('click',onCancelButtonClick);
+cancelButton.addEventListener('click', onCancelButtonClick);
 commentsLoader.addEventListener('click',onCommentsLoaderClick);
-export { showBigPicture };
+
+export {showBigPicture};
